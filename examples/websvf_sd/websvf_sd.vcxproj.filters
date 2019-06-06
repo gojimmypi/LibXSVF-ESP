@@ -17,5 +17,9 @@
   <ItemGroup>
     <None Include="websvf_sd.ino" />
   </ItemGroup>
- 
+  <ItemGroup>
+    <ClInclude Include="__vm\.websvf_sd.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
