@@ -78,7 +78,17 @@ void setup()
   pinMode(__DC_TFT, INPUT_PULLUP); // pullup SPI
   pinMode(__CS_TFT, INPUT_PULLUP); // pullup SPI
   pinMode(__RES_TFT, INPUT_PULLUP); // pullup SPI
+  
+  
   Serial.begin(115200);
+  Serial.println("hello");
+  Serial.print("__CS_SD =");  Serial.println(__CS_SD);
+  Serial.print("__MOSI_TFT ="); Serial.println(__MOSI_TFT);
+  Serial.print("__MISO_TFT ="); Serial.println(__MISO_TFT);
+  Serial.print("__SCL_TFT ="); Serial.println(__SCL_TFT);
+  Serial.print("__DC_TFT ="); Serial.println(__DC_TFT);
+  Serial.print("__CS_TFT ="); Serial.println(__CS_TFT);
+  Serial.print("__RES_TFT ="); Serial.println(__RES_TFT);
   Serial.setDebugOutput(true);
   pinMode(LED_WIFI, OUTPUT);
   digitalWrite(LED_WIFI, HIGH); // welcome blink
@@ -132,6 +142,11 @@ void setup()
       try_to_autoexec(SD);
       sd_unmount();
     }
+    //else {
+    //  Serial.println("alternate reading sd config");
+    //  read_config(SD);
+    //  try_to_autoexec(SD);
+    //  sd_unmount();    }
   }
 
   // Start with open AP
@@ -200,6 +215,7 @@ void setup()
   web_server_init();
 
   digitalWrite(LED_WIFI, LOW); // remove conected blink
+  Serial.println("Setup Done!");
 }
 
 
